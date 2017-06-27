@@ -288,12 +288,14 @@
      */
     function setCustomSelectColumn (columnName) {
       var cellTemplate = '<div class="ngCellText text-align-center ui-grid-cell-contents">' +
+          '<span ng-if="grid.appScope.currentTypes[' +
+          'grid.appScope.currentTypes.length-1]==\'PAIR\'">' +
           '<a rp-node-selection-popover title="Select Tool Input"' +
           'ng-click="grid.appScope.openSelectionPopover(row.entity)"' +
           'id="{{row.entity.uuid}}">' +
           '<div class="full-size ui-grid-selection-row-header-buttons solidText">' +
-          '<i class="fa fa-arrow-right" aria-hidden="true">' +
-          '</i></div></a></div>';
+          '<i class="fa fa-plus-circle" aria-hidden="true">' +
+          '</i></div></a></span></div>';
 
       var isToolSelected = !_.isEmpty(toolSelectService.selectedTool);
 
