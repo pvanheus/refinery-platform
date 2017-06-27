@@ -60,6 +60,7 @@
     var toolService = toolSelectService;
     var vm = this;
     vm.activeNodeRow = nodesService.activeNodeRow;
+    vm.addSelection = addSelection;
     vm.analysisFilter = assayFiltersService.analysisFilter;
     // attribute list from api
     vm.assayAttributes = fileBrowserFactory.assayAttributes;
@@ -118,6 +119,10 @@
       checkUsersGroupEdit();
       // initialize the dataset and updates ui-grid selection, filters, and url
       initializeDataOnPageLoad();
+    }
+
+    function addSelection () {
+      console.log('addSelection');
     }
 
     // Helper method to keep track when data should be discard or added
